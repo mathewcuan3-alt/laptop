@@ -1,0 +1,25 @@
+CEKRINGKAS LAPTOP — SATU MENU, TIGA MODE
+
+1. Ekstrak folder CekRingkas_QC_Paket.zip ke satu folder.
+2. Buka PowerShell di folder hasil ekstrak.
+3. Jalankan:
+   powershell -NoProfile -ExecutionPolicy Bypass -File .\Jalankan_CekRingkas_QC.ps1
+4. Pilih 1, 2, atau 3 dari menu.
+
+MODE 1 — SUMMARY REPORT AWAL
+- Launcher mencoba mengambil file PowerShell terbaru dari Gist yang diberikan.
+- Jika Gist mendukung -SkipInteractive, launcher memakainya untuk mencoba mode laporan saja.
+- Jika parameter tidak tersedia atau internet gagal, script dijalankan sesuai alur aslinya / fallback V11.1 yang disertakan.
+- File asli yang diunduh disimpan di Modules\CekRingkas_Original_Gist.ps1 agar tidak hilang.
+
+MODE 2 — SUMMARY QC
+- Menjalankan QC_Guided_V13.ps1 yang disertakan: pemeriksaan perangkat Windows + tes interaktif dan laporan HTML/JSON.
+
+MODE 3 — COMPONENT SCANNER
+- Membuat laporan HTML + JSON ke Desktop. Laporan mencakup motherboard, CPU, GPU, RAM per modul, storage, baterai, network, audio, webcam dan error PnP.
+- Diagram motherboard adalah ilustrasi generik, bukan foto PCB laptop tertentu. PowerShell tidak bisa memastikan kerusakan jalur/IC/short circuit; pemeriksaan fisik dan alat ukur tetap dibutuhkan.
+
+CATATAN
+- Jangan hapus folder Modules karena launcher menjalankan modul dari sana.
+- Jalankan sebagai Administrator bila ingin akses informasi perangkat lebih lengkap; sebagian data bergantung firmware/driver dan bisa kosong.
+- Script ini tidak menghapus data atau memformat disk.
